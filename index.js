@@ -331,9 +331,79 @@
 // console.log(ans)
 
 //object
-const obj = {
-    name : "Broky",
-    age : 20,
-    country : "Latvia",
+// const obj = {
+//     name : "Broky",
+//     age : 20,
+//     country : "Latvia",
+// }
+// console.log(obj)
+
+//missing
+
+const text = document.getElementById("Z3phyr")
+//text.innerHTML = "Not Rohit"
+text.innerHTML = "<h1>Not Rohit</h1>"
+text.style.backgroundColor = "red"
+text.style.color = "blue"
+console.log(text)
+
+const text1 = document.getElementsByClassName("cypher")
+
+//console.log(text1[0])
+
+//text1[0].innerHTML = "s0mple"
+
+text1[0].innerHTML = "<h3>s0mple</h3>"
+text1[0].style.backgroundColor="brown"
+text1[0].style.color="red"
+
+const tag = document.getElementsByTagName("span")
+console.log(tag)
+
+tag[1].innerHTML = "Not Rain"
+tag[1].style.backgroundColor = "yellow"
+tag[1].style.color="purple"
+
+const button = document.querySelectorAll("button")
+console.log(button[1])
+
+button[1].style.backgroundColor="red"
+button[1].style.color="white"
+button[1].style.cursor = "pointer"
+button[1].style.padding="10px"
+button[1].style.border="none"
+button[1].style.margin="6px"
+
+const button2 = document.querySelector("#click") //id xa vane #, class xa vane .
+console.log(button2)
+
+button2.style.backgroundColor="green"
+button2.style.color="white"
+button2.style.cursor="pointer"
+button2.style.padding="10px"
+button2.style.border="none"
+button2.style.margin="6px"
+
+// console.log(button2.getAttribute("id"))
+// button2.setAttribute("class","class_name")
+
+// const h1 = document.createElement("h1")
+// h1.innerHTML = "Broky"
+// //document.body.append(h1) // show below
+// document.body.prepend(h1) // shows on top
+
+function showWhenClick() {
+    const h1 = document.createElement("h1")
+h1.innerHTML = "Broky"
+//document.body.append(h1) // show below
+document.body.prepend(h1) // shows on top
 }
-console.log(obj)
+
+
+function deleteonce() {
+    const h1 = document.querySelector("h1")
+    h1.remove()   
+}
+
+button2.onclick=showWhenClick  //to show when button is clicked
+button[1].onclick=deleteonce
