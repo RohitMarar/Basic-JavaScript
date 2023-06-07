@@ -340,70 +340,279 @@
 
 //missing
 
-const text = document.getElementById("Z3phyr")
-//text.innerHTML = "Not Rohit"
-text.innerHTML = "<h1>Not Rohit</h1>"
-text.style.backgroundColor = "red"
-text.style.color = "blue"
-console.log(text)
+// const text = document.getElementById("Z3phyr")
+// //text.innerHTML = "Not Rohit"
+// text.innerHTML = "<h1>Not Rohit</h1>"
+// text.style.backgroundColor = "red"
+// text.style.color = "blue"
+// console.log(text)
 
-const text1 = document.getElementsByClassName("cypher")
+// const text1 = document.getElementsByClassName("cypher")
 
-//console.log(text1[0])
+// //console.log(text1[0])
 
-//text1[0].innerHTML = "s0mple"
+// //text1[0].innerHTML = "s0mple"
 
-text1[0].innerHTML = "<h3>s0mple</h3>"
-text1[0].style.backgroundColor="brown"
-text1[0].style.color="red"
+// text1[0].innerHTML = "<h3>s0mple</h3>"
+// text1[0].style.backgroundColor="brown"
+// text1[0].style.color="red"
 
-const tag = document.getElementsByTagName("span")
-console.log(tag)
+// const tag = document.getElementsByTagName("span")
+// console.log(tag)
 
-tag[1].innerHTML = "Not Rain"
-tag[1].style.backgroundColor = "yellow"
-tag[1].style.color="purple"
+// tag[1].innerHTML = "Not Rain"
+// tag[1].style.backgroundColor = "yellow"
+// tag[1].style.color="purple"
 
-const button = document.querySelectorAll("button")
-console.log(button[1])
+// const button = document.querySelectorAll("button")
+// console.log(button[1])
 
-button[1].style.backgroundColor="red"
-button[1].style.color="white"
-button[1].style.cursor = "pointer"
-button[1].style.padding="10px"
-button[1].style.border="none"
-button[1].style.margin="6px"
+// button[1].style.backgroundColor="red"
+// button[1].style.color="white"
+// button[1].style.cursor = "pointer"
+// button[1].style.padding="10px"
+// button[1].style.border="none"
+// button[1].style.margin="6px"
 
-const button2 = document.querySelector("#click") //id xa vane #, class xa vane .
-console.log(button2)
+// const button2 = document.querySelector("#click") //id xa vane #, class xa vane .
+// console.log(button2)
 
-button2.style.backgroundColor="green"
-button2.style.color="white"
-button2.style.cursor="pointer"
-button2.style.padding="10px"
-button2.style.border="none"
-button2.style.margin="6px"
+// button2.style.backgroundColor="green"
+// button2.style.color="white"
+// button2.style.cursor="pointer"
+// button2.style.padding="10px"
+// button2.style.border="none"
+// button2.style.margin="6px"
 
-// console.log(button2.getAttribute("id"))
-// button2.setAttribute("class","class_name")
+// // console.log(button2.getAttribute("id"))
+// // button2.setAttribute("class","class_name")
 
-// const h1 = document.createElement("h1")
+// // const h1 = document.createElement("h1")
+// // h1.innerHTML = "Broky"
+// // //document.body.append(h1) // show below
+// // document.body.prepend(h1) // shows on top
+
+// function showWhenClick() {
+//     const h1 = document.createElement("h1")
 // h1.innerHTML = "Broky"
 // //document.body.append(h1) // show below
 // document.body.prepend(h1) // shows on top
-
-function showWhenClick() {
-    const h1 = document.createElement("h1")
-h1.innerHTML = "Broky"
-//document.body.append(h1) // show below
-document.body.prepend(h1) // shows on top
-}
+// }
 
 
-function deleteonce() {
-    const h1 = document.querySelector("h1")
-    h1.remove()   
-}
+// function deleteonce() {
+//     const h1 = document.querySelector("h1")
+//     h1.remove()   
+// }
 
-button2.onclick=showWhenClick  //to show when button is clicked
-button[1].onclick=deleteonce
+// button2.onclick=showWhenClick  //to show when button is clicked
+// button[1].onclick=deleteonce
+
+//advance array methods
+
+// const MyFunc=(a,b)=>{ // fat arrow function
+//     return a+b
+// }
+// const re=MyFunc(2,3)
+// console.log(re)
+
+//const arr = [1,2,3,4,1,4,8,7,8,9,6]
+
+
+
+// arr.find((value,index) => {
+//     if(value===6){
+//         console.log("6 exists!!!")
+//     }
+// })
+
+// arr.find((value,index)=>console.log(value,index))
+// const newarr=arr.find((value,index)=>value>5) // find gives only one value one step above
+// console.log(newarr)
+
+// const Rarr=arr.filter((value,index)=>value>5)
+// console.log(Rarr)
+
+//some
+// const rarr=arr.some((value,index)=>value>6) //returns a boolean value if specific condition is true
+// console.log(rarr)
+
+// const rarr=arr.every((value,index)=>value>6) //returns a boolean value if all condition is true
+// console.log(rarr)
+
+// const rarr=arr.sort((a,b) => a-b) //
+// console.log(rarr)
+
+// const myArr = [[1,2,3,4],[5,60,7],[8,9,10]]
+// const flatArr = myArr.flat()
+// console.log(flatArr)
+
+//forEach and map , forEach doesn't return new array, map does
+// const newArr = arr.map((value,index)=> value+=7)
+// console.log(newArr)
+// console.log(arr)
+
+//reduce  
+
+// const result=arr.reduce((preValue,currentValue)=>preValue+currentValue) // prevalue ani arko can be named anything
+// console.log(result)
+
+// event listeners
+// const header=document.getElementById("header")
+// const box = document.getElementById("box")
+// const button = document.getElementById("button")
+// const input = document.querySelector("input")
+
+// button.classList.add("classForDiv")
+
+// button.addEventListener("click",()=>
+// {
+//     box.classList.add("classForBox")
+// })
+
+// box.addEventListener("mouseover",()=>
+// {
+//     button.style.transform = "scale(1.3)"
+//     header.style.backgroundColor="yellow"
+//     header.style.color="white"
+//     header.innerHTML = "NOT WELCOME!!!"
+//     button.style.filter=""
+// })
+
+// box.addEventListener("mouseout",()=>
+// {
+//     button.style.transform = ""
+//     header.style.backgroundColor=""
+//     header.style.padding=""
+//     header.style.color="black"
+// })
+
+// button.addEventListener("contextmenu",(e)=>{
+//     e.preventDefault() // to not show context menu when clicked on the  button
+//     button.style.backgroundColor="purple"
+// })
+
+// addEventListener("contextmenu",(e)=>{
+//     e.preventDefault() // to not show context menu in all body
+//     button.style.filter="blur(10px)"
+// })
+
+// box.addEventListener("dblclick",()=>{
+//     document.body.style.backgroundColor="black"
+// })
+
+// box.addEventListener("click",()=>{
+//     document.body.style.backgroundColor="#fff"
+// })
+
+// input.addEventListener("change",(e)=>{
+//     console.log(e.target.value)
+// })
+
+// Math Objects
+
+// const r=Math.round(4.5)
+// console.log(r)
+
+// const r=Math.floor(4.5)
+// console.log(r)
+
+// const r=Math.ceil(4.5)
+// console.log(r)
+
+// const r=Math.trunc(4.5)
+// console.log(r)
+
+// const r=Math.random()
+// console.log(r)
+
+// const r=Math.abs(-4.5)
+// console.log(r)
+
+// function f(a,b) {
+//     return Math.abs(a - b)
+// }
+
+// const res=f(2,8)
+// console.log(res)
+
+// const r=Math.max(4,6,1,69,5) //same for min
+// console.log(r)
+
+// const r=Math.pow(2,5)
+// console.log(r)
+
+// const r=Math.sqrt(625)
+// console.log(r)
+
+// const r=Math.sin(90*Math.PI/180) // converting angle to radin first and calulating sin90
+// console.log(r)
+
+// const r=Math.log10(100)
+// console.log(r)
+
+// const r=Math.log2(8)
+// console.log(r)
+
+// Date
+
+// const r=new Date()
+// console.log(r.toISOString())
+// console.log(r.getDay())
+
+// local storage and session storage
+
+// const Input=document.querySelector("input")
+// const BtnClick=document.querySelector("#click")
+// const Btnlogout=document.querySelector("#clear")
+
+// BtnClick.style.backgroundColor="green"
+// BtnClick.style.color="white"
+// BtnClick.style.border="none"
+// BtnClick.style.width="100px"
+// BtnClick.style.height="50px"
+// BtnClick.style.cursor="pointer"
+
+// Btnlogout.style.backgroundColor="red"
+// Btnlogout.style.color="white"
+// Btnlogout.style.border="none"
+// Btnlogout.style.width="100px"
+// Btnlogout.style.height="50px"
+// Btnlogout.style.cursor="pointer"
+
+// const addData = (e)=>{
+//     localStorage.setItem("key", Input.value)
+
+// }
+// BtnClick.addEventListener("click", addData)
+// Btnlogout.addEventListener("click",()=>{
+//     localStorage.clear()
+// })
+
+// if(localStorage.getItem("key")){
+//     alert(localStorage.getItem("key")) // if you replace local storage with session sotrage all same, session le one time samma data rakhxa local browser ma rakhxa untill clear
+// }
+
+// const addData = (e)=>{
+//     localStorage.setItem("key", 
+//     JSON.stringify({
+//         name."Rohit",
+//         age:25,
+//         gender:"male",
+//         isMarried:false,
+//     }))
+
+// }
+// BtnClick.addEventListener("click", addData)
+// Btnlogout.addEventListener("click",()=>{
+//     localStorage.clear()
+// })
+
+// if(localStorage.getItem("key")){
+//     //alert(localStorage.getItem("key")) // if you replace local storage with session sotrage all same, session le one time samma data rakhxa local browser ma rakhxa untill clear
+//     console.log(JSON.parse(localStorage.getItem("key")))
+// }
+
+
+
+ 
