@@ -614,5 +614,235 @@
 // }
 
 
+// setTimeout and SetInterval
 
- 
+// const myFunc = () => {
+//     console.log("Rohit!!!")
+// }
+// setTimeout(myFunc, 4000)
+
+// const btn=document.querySelector("#clear")
+// const intervalId=setTimeout(()=>{
+//     console.log("Rohit")
+// },4000)
+
+// btn.addEventListener("click",()=>{
+//     clearTimeout(intervalId)
+// })
+
+// const btn=document.querySelector("#clear")
+// const intervalId=setInterval(()=>{
+//     console.log("Rohit")
+// },4000)
+
+// btn.addEventListener("click",()=>{
+//     clearInterval(intervalId)
+// })
+
+// const intervalID= setInterval(()=>{
+//     const now = new Date()
+//     console.log(now.toLocaleTimeString())
+//     document.write(now.toLocaleTimeString())
+// },1000)
+
+// setTimeout(()=>{
+//     clearInterval(intervalID)
+// },5000)
+
+// constructor function
+
+// function Person (name,age){ //constructor function name must have Capial letter at the begining
+//     this.name = name
+//     this.age= age
+
+//     this.greet = function(){
+//         console.log(`My name is: ${this.name}. And my age is : ${this.age}`)
+//     }
+// }
+// const person1= new Person("Rohit",23)
+// const person2= new Person("Broky",20)
+
+// console.log(person1, person2)
+// person1.greet()
+
+// function BankAcc(custName,balance=0){
+//     this.custName = custName
+//     this.accountNumber = Date.now() // for random number
+//     this.balance = balance
+
+//     this.deposite = function(amount){
+//         this.balace+=amount
+//     }
+
+//     this.withdraw = function(amount){
+//         this.balance-=amount
+//     }
+// }
+
+
+// const RohitAccount = new BankAcc("Rohit",7000)
+// const SDYAccount = new BankAcc("SDY",8000)
+
+// SDYAccount.deposite(2000)
+// SDYAccount.withdraw(1000)
+
+// console.log(RohitAccount,SDYAccount)
+
+// to show in dom
+
+
+// const addForm=document.querySelector("#addAmount")
+// const custName=document.querySelector("#CustomerName")
+// const balance=document.querySelector("#balance")
+
+// const depositeForm=document.querySelector("#depositeAmount")
+// const accountNumber=document.querySelector("#accountNumber")
+// const amount=document.querySelector("#amount")
+
+// let accounts = []
+
+// addForm.addEventListener("submit",(e)=>{
+//     e.preventDefault()
+//     const newAccount=new BankAcc(custName.value, +balance.value) //+ to convert string to number
+//    accounts.push(newAccount)
+//    console.log(accounts)
+// })
+
+
+
+// depositeForm.addEventListener("submit",(e)=>{
+//     e.preventDefault()  
+//     const newAccount=accounts.find((value,index)=>value.accountNumber === +accountNumber.value)
+//     newAccount.deposit(+amount.value)
+//     console.log(accounts)
+// })
+
+// function BankAccount(customerName,balance=0){
+//     this.customerName = customerName
+//     this.accountNumber = Date.now()
+//     this.balance = balance
+
+//     this.deposite = function(amount){
+//         this.balance+=amount
+//     }
+
+//     this.withdraw = function(amount){
+//         this.balance-= amount
+//     }
+// }
+
+// BankAccount.prototype.deposite = function(amount){
+//     this.balance += amount
+// }
+// BankAccount.prototype.withdraw = function(amount){
+//     this.balance -= amount
+// }
+
+// function SavingAccount(customerName,balance=0){
+//     BankAccount.call(this,customerName,balance)
+//     this.transactionLimite = 40000
+// }
+// //SavingAccount.prototype= Object.create(BankAccount.prototype)
+
+// SavingAccount.prototype.takeLoan = function(amount){
+//     console.log(`Loan is : ${amount}`)
+// }
+// console.log(Array.prototype)
+
+//console.log(BankAccount.prototype)
+// const rohitAccount = new BankAccount("Rohit",4500)
+// const SDYAccount = new BankAccount ("SDY",3000)
+// const rohitAccount = new SavingAccount("Rohit",4500)
+// const SDYAccount = new SavingAccount ("SDY",3000)
+// rohitAccount.deposite(4000)
+// rohitAccount.withdraw(3000)
+// rohitAccount.takeLoan(20000)
+// console.log(rohitAccount)
+// console.log(SDYAccount)
+
+// rohitAccount.deposite(2000)
+
+// console.log(rohitAccount)
+// console.log(SDYAccount)
+
+//class
+class BankAccount {
+    customerName
+    accountNumber
+    #balance=0
+    constructor(customerName,balance=0){
+        this.customerName = customerName
+        this.accountNumber = Date.now()
+        this.#balance = balance // # means encapsulation
+    }
+    deposite(amount){
+        this.#balance += amount
+    }
+    withdraw(amount){
+        this.#balance -= amount
+    }
+
+    setBalance(newBalance){
+        if (isNaN (newBalance)){
+            throw new Error ("ONLY ENTER NUMBER!!!") 
+        }
+        this.#balance = newBalance
+    }
+    getBalance(){
+        return this.#balance
+    }
+
+}
+
+// const RohitAccount=new BankAccount("Rohit",4500)
+// RohitAccount.deposite(2000)
+// RohitAccount.withdraw(500)
+// console.log(RohitAccount)
+
+// class Person{
+//     constructor(Name,Age,Salary){
+//         this.Name = Name
+//         this.Age = Age 
+//         this.Salary = Salary 
+
+//     }
+//     greet(){
+//         console.log(`My name is ${this.Name} and my age is ${this.Age}. My salary is ${this.Salary}.`)
+//     }
+// }
+// const R=new Person("Rohit",23,35000)
+// R.greet()
+
+
+// class SavingAccount extends BankAccount{
+//     construcor(customerName,balance=0){
+//         super(customerName,balance)
+
+//     }
+// }
+
+// const rohitAccount = new SavingAccount("Rohit",6000)
+// rohitAccount.deposite(3000)
+// console.log(rohitAccount)
+
+class currentAccount extends BankAccount{
+    transactionLimit = 50000
+    constructor(customerName,balance = 0){
+        super(customerName,balance)
+    }
+    #calculateInterest(amount){
+        console.log(`Calculating amount for : ${amount}`)
+        const interest = amount * 0.05
+        console.log(`Calculated interest rate is : ${interest}`)
+    }
+    takeBusinessLoan(amount){
+        this.#calculateInterest(amount)
+        console.log(`Taking business loan of : ${amount}`)
+    }
+}
+
+const R=new currentAccount("Rohit",5000)
+R.takeBusinessLoan(20000)
+// R.setBalance(69000)
+// console.log(R.getBalance())
+console.log(R)
