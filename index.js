@@ -766,33 +766,33 @@
 // console.log(SDYAccount)
 
 //class
-class BankAccount {
-    customerName
-    accountNumber
-    #balance=0
-    constructor(customerName,balance=0){
-        this.customerName = customerName
-        this.accountNumber = Date.now()
-        this.#balance = balance // # means encapsulation
-    }
-    deposite(amount){
-        this.#balance += amount
-    }
-    withdraw(amount){
-        this.#balance -= amount
-    }
+// class BankAccount {
+//     customerName
+//     accountNumber
+//     #balance=0
+//     constructor(customerName,balance=0){
+//         this.customerName = customerName
+//         this.accountNumber = Date.now()
+//         this.#balance = balance // # means encapsulation
+//     }
+//     deposite(amount){
+//         this.#balance += amount
+//     }
+//     withdraw(amount){
+//         this.#balance -= amount
+//     }
 
-    setBalance(newBalance){
-        if (isNaN (newBalance)){
-            throw new Error ("ONLY ENTER NUMBER!!!") 
-        }
-        this.#balance = newBalance
-    }
-    getBalance(){
-        return this.#balance
-    }
+//     setBalance(newBalance){
+//         if (isNaN (newBalance)){
+//             throw new Error ("ONLY ENTER NUMBER!!!") 
+//         }
+//         this.#balance = newBalance
+//     }
+//     getBalance(){
+//         return this.#balance
+//     }
 
-}
+// }
 
 // const RohitAccount=new BankAccount("Rohit",4500)
 // RohitAccount.deposite(2000)
@@ -825,24 +825,259 @@ class BankAccount {
 // rohitAccount.deposite(3000)
 // console.log(rohitAccount)
 
-class currentAccount extends BankAccount{
-    transactionLimit = 50000
-    constructor(customerName,balance = 0){
-        super(customerName,balance)
-    }
-    #calculateInterest(amount){
-        console.log(`Calculating amount for : ${amount}`)
-        const interest = amount * 0.05
-        console.log(`Calculated interest rate is : ${interest}`)
-    }
-    takeBusinessLoan(amount){
-        this.#calculateInterest(amount)
-        console.log(`Taking business loan of : ${amount}`)
-    }
-}
+// class currentAccount extends BankAccount{
+//     transactionLimit = 50000
+//     constructor(customerName,balance = 0){
+//         super(customerName,balance)
+//     }
+//     #calculateInterest(amount){
+//         console.log(`Calculating amount for : ${amount}`)
+//         const interest = amount * 0.05
+//         console.log(`Calculated interest rate is : ${interest}`)
+//     }
+//     takeBusinessLoan(amount){
+//         this.#calculateInterest(amount)
+//         console.log(`Taking business loan of : ${amount}`)
+//     }
+// }
 
-const R=new currentAccount("Rohit",5000)
-R.takeBusinessLoan(20000)
+// const R=new currentAccount("Rohit",5000)
+// R.takeBusinessLoan(20000)
 // R.setBalance(69000)
 // console.log(R.getBalance())
-console.log(R)
+// console.log(R)
+
+//static property and method , access garne without making object
+// class Auth{
+//     static dbEmail = "email.com"
+//     static dbPassword = "Password"
+//     static dbToken = "fweofufwefef"
+// }
+
+// console.log(Auth.dbEmail)
+
+// class Person{
+//     static id = 1
+//     constructor(name,age,income){
+//         this.name=name
+//         this.age=age
+//         this.income=income
+//         this.id = Person.id++
+//     }
+//     static compareByAge(a,b){
+//         return a.age-b.age
+//     }
+//     static compareBySalary(a,b){
+//         return a.income-b.income
+//     }
+//     static compareByFind(value,index){
+//         return value.income > 300
+//     }
+//     static compareByFilter(value,index){
+//         return value.income > 300
+//     }
+// }
+
+// const user1=new Person("Rohit",23,555)
+// const user2=new Person("Sam",21,6686)
+// const user3=new Person("Broky",20,678)
+// const user = [user1,user2,user3]
+//const result=user.sort(Person.compareBySalary)
+//const result=user.find(Person.compareByFind)
+// const result=user.filter(Person.compareByFilter)
+
+// console.log(result)   
+// setTimeout(()=>{
+//     alert("F#ck of World")
+
+// },3000)
+// console.log("first")
+// console.log("second")
+
+// function add (a,b,cb){
+//     const result = a+b
+//     cb(result)
+// }
+
+// function displaySum(ans){
+//     console.log(`The sum is ${ans}`)
+// }
+
+// add(6,9,displaySum)
+// add(1,2,alert)
+
+//callback
+
+// let Arr=[5,6,7,8,9,1,2,3]
+
+// function Calculate(arr=[],cb){
+//     let ans= []
+//     for(let i = 0;i<arr.length;i++){
+//         ans.push(cb(arr[i]))
+//     }
+//     console.log(ans)
+// }
+
+// Calculate(Arr, (a)=>a*10) 
+// Calculate(Arr, (a)=>a/10)
+// Calculate(Arr, (a)=>a+10)
+
+// let personList = []
+// const fetchedData = (callback) =>{
+//     setTimeout (()=>{
+//         personList.push(
+//             {id:1,name:"Rohit",age:23},
+//             {id:2,name:"Sam",age:22},
+//             {id:3,name:"Broky",age:20},
+//             {id:4,name:"Rpoz",age:21},
+//             )
+//             callback()
+//             console.log(personList)
+//     },4000,
+//     callback)
+// }
+// const displayName=()=>{
+//     setTimeout(()=>{
+//         for(let i=0;i<personList.length;i++){
+//             const p = document.createElement("p")
+//             p.innerHTML=personList[i].name
+//             document.body.append(p)
+//         }
+//     },1000)
+    
+// }
+// fetchedData(displayName)
+
+// const ans = new Promise((resolve,reject)=>{
+//     let success = false
+//     if(success){
+//         resolve("Promise Fulfilled!!!")
+//     }
+//     else{
+//         reject("Error")
+//     }
+
+    
+// })
+// ans.then((params)=>console.log(params))
+// .catch((err)=>console.log(err))
+// .finally(()=>console.log("done"))
+
+// let arr = []
+// const fetchedData = ()=>{
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             arr.push({name:"Rohit"})
+//             if(arr.length>0) resolve("Data Fetched")
+//             else reject("Error")
+//         },3000)
+//     })
+// }
+// fetchedData(arr).then((msg)=>console.log(msg)).catch((err)=>console.log(err))
+// .finally(()=>console.log("Done"))
+
+// const URL = "https://catfact.ninja/fact"
+// const h1= document.querySelector("h1")
+// const fetchedData=()=>{
+//     fetch(URL).then((res)=>res.json()).
+//     then((data)=>(h1.innerHTML = data.fact))
+//     .catch((err)=>console.log(err))
+// }
+// fetchedData()
+
+// const fetchedData = async() => {
+//     try {
+//         const res = await fetch(URL)
+//     const data=await res.json()
+//     h1.innerHTML = data.fact
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+// fetchedData()
+
+//navigator.geolocation.getCurrentPosition((a)=>console.log(a.coords))
+//console.log(screen)
+//console.log(history)
+// console.log(location.protocol)
+// console.log(location.port)
+// console.log(location.host)
+// console.log(location.hostname)
+// console.log(location.href)
+// console.log(location.search)
+
+const tf=document.querySelector(".weather1")
+const city=document.querySelector(".weather2 p")
+const date=document.querySelector(".weather2 span")
+const image=document.querySelector(".weather3 img")
+const weather=document.querySelector(".weather3 span")
+const form=document.querySelector("form")
+const input= document.querySelector(".searchField")
+
+let target = "Kathmandu"
+
+const fetchData = async(target)=>{
+try {
+    const res = await fetch(
+        `https://api.weatherapi.com/v1/current.json?key=61eaab1a3b014274b8d70941231606&q=${target}`
+    )
+    const data = await res.json()
+    console.log(data)
+    //destructure
+    const {
+        current:{
+            temp_c,condition:{icon,text},
+        },
+        location:{name,localtime},
+    } = data
+    tf.innerHTML=`${temp_c}&deg;C`
+    city.innerHTML=name
+    //date.innerHTML=data.
+    image.src = icon
+    weather.innerText = text
+
+    const time=localtime.split(" ")[1]
+    const date = localtime.split(" ")[0]
+
+    const currentDate = new Date()
+    const currentDay = day(currentDate.getDay())
+    date.innerHTML = `${time} - ${currentDate} ${currentDay}`
+    
+} catch (error) {
+    alert("Location Not Found")
+    
+}
+}
+fetchData(target)
+
+form.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    if(input.value.trim()===""){
+        alert("Enter a City")
+    }
+    else{
+    target=input.value
+    fetchData(target)
+    }
+})
+
+function day(num){
+    switch (num) {
+        case 0:
+            return "Sunday"
+        case 1:
+            return "Monday"
+        case 2:
+            return "Tuesday"
+        case 3:
+            return "Wednesday"
+        case 4:
+            return "Thursday"
+        case 5:
+            return "Friday"
+        case 6:
+            return "Saturday"
+        default:
+            return "Invalid"    
+    }
+}
